@@ -11,14 +11,11 @@ def ejemplo(request):
     return render(request,"ejemplo.html",{"hoy":diferencia})
 
 def usuario(request):
-    datos = models.Datos.objects.all()
-    usuario = datos[0]
+    datos = models.Datos.objects.all()   
     
     context = {}
-    context["id"] = usuario.id
-    context["nombre"] = usuario.nombre
-    context["apellido1"] = usuario.apellido1
-    context["apellido2"] = usuario.apellido2
+    context["personas"] = datos    
     
+    context["texto"] = "Prueba argumento"
     return render(request, "usuario.html", context)
     

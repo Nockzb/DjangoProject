@@ -1,10 +1,23 @@
 {% extends "base.html" %}
 {% block titulo %} Ejemplo de la BBDD {% endblock %}
 {% block cuerpo %}
-<p>
+{% comment %} <p>
     ID: {{ id }} <br>
     Nombre: {{ nombre }} <br>
     Apellido 1: {{ apellido1 }} <br>
     Apellido 2: {{ apellido2 }} <br>
-</p>
+</p> {% endcomment %}
+<hr>
+<h4>1 - Texto por argumento: <i>{{ texto }}</i></h4> <!-- ejercicio 1 -->
+
+{% include "textoInclude.html" with nombre="Sebastián Villegas" %} <!-- ejercicio 2 -->
+
+<div>
+    {% for p in personas %}<!-- ejercicio 3 -->
+        <p>{{p.nombre}}-{{p.apellido1}}</p>
+    {% endfor %}
+</div>
+
 {% endblock %}
+
+
