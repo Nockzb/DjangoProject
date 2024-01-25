@@ -12,9 +12,17 @@ def ejemplo(request):
 
 def usuario(request):
     datos = models.Datos.objects.all()   
+    usuario = datos[0]
     
-    context = {}
-    context["personas"] = datos    
+    context = {}    
+    context["id"] = usuario.id
+    context["nombre"] = usuario.nombre 
+    context["apellido1"] = usuario.apellido1
+    context["apellido2"] = usuario.apellido2
+    context["personas"] = datos # todos los datos de la BD
+    
+    context["listaVacia"] = [] # lista vacía para que se muestre la imágen
+    
     
     context["texto"] = "Prueba argumento"
     return render(request, "usuario.html", context)
