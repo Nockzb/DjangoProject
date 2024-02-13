@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% url 'app:ejemplo' pk=valor %}
+{% load static %}
+{% block titulo %} Ejemplo de la BBDD {% endblock %}
+{% block cuerpo %} 
+    <form method="POST">
+        {% csrf_token %} 
+        {{ form.as_p }} 
+        <input type="Submit" value="Aceptar" /> 
+    </form> 
+{% endblock %}
+
+

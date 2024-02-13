@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %} Ejemplo de la BBDD {% endblock %}
+{% block cuerpo %}
+    <h1>Tabla de Personas</h1> <!-- ejercicio 3 -->
+    <table style="border-collapse: collapse; width: 80%;">
+        <thead class="se">
+            <tr style="border: 1px solid black; background-color: #f2f2f2;">
+                <th style="text-align: center; border: 1px solid black">ID</th>
+                <th style="text-align: center; border: 1px solid black">Nombre</th>
+                <th style="text-align: center; border: 1px solid black">Apellido 1</th>
+                <th style="text-align: center; border: 1px solid black">Apellido 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for persona in object_list %}
+            <tr style="border: 1px solid black">
+                <td style="text-align: center; border: 1px solid black">{{ persona.id }}</td>
+                <td style="text-align: center; border: 1px solid black">{{ persona.nombre }}</td>
+                <td style="text-align: center; border: 1px solid black">{{ persona.apellido1 }}</td>
+                <td style="text-align: center; border: 1px solid black">{{ persona.apellido2 }}</td>          
+            </tr>
+            {% empty %}
+                <img
+                    src="{% static 'img/sindatos.jpeg' %}"
+                    class="img-fluid rounded-top"
+                    alt=""
+                />                
+            {% endfor %}
+        </tbody>
+    </table>    
+{% endblock %}
+
+
