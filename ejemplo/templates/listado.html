@@ -18,7 +18,9 @@
                 <td style="text-align: center; border: 1px solid black">{{ persona.id }}</td>
                 <td style="text-align: center; border: 1px solid black">{{ persona.nombre }}</td>
                 <td style="text-align: center; border: 1px solid black">{{ persona.apellido1 }}</td>
-                <td style="text-align: center; border: 1px solid black">{{ persona.apellido2 }}</td>          
+                <td style="text-align: center; border: 1px solid black">{{ persona.apellido2 }}</td>
+                <td style="color:red"><i><a href="{% url 'ejemplo:update' pk=persona.id %}">[Actualizar]</a></i></td>
+                <td style="color:red"><i><a href="{% url 'ejemplo:delete' pk=persona.id %}">[Eliminar]</a></i></td>        
             </tr>
             {% empty %}
                 <img

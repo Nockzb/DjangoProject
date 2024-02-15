@@ -9,7 +9,7 @@ def ejemplo(request):
     hoy = date.today()
     diferencia=(final-hoy).days
     # segundo parametro es el path
-    return render(request,"ejemplo.html",{"hoy":diferencia})
+    return render(request, "ejemplo.html", {"hoy":diferencia})
 
 # def usuario(request):
 #     datos = models.Datos.objects.all()   
@@ -38,18 +38,18 @@ class DetalleView(generic.DetailView):
     
 class CreateView(generic.CreateView):
     model = models.Datos
-    fields = ['nombre', 'apellido1', 'apellido2']
+    # fields = ['nombre', 'apellido1', 'apellido2']
     template_name = "crear.html" 
     success_url = "/ejemplo/listado/" 
 
 class UpdateView(generic.UpdateView):
     model = models.Datos
-    fields = ['nombre', 'apellido1', 'apellido2']
+    # fields = ['nombre', 'apellido1', 'apellido2']
     template_name = "actualizar.html" 
     success_url = "/ejemplo/listado/"
 
 class DeleteView(generic.DeleteView):
     model = models.Datos
-    fields = []
+    # fields = []
     template_name = "eliminar.html" 
     success_url = "/ejemplo/listado/"
